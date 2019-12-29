@@ -7,14 +7,22 @@ class Movies extends Component {
 
 
   handleDelete = movie =>{
+     
       const movies = this.state.movies.filter(m => m._id !== movie._id);
       this.setState({movies})
     //  console.log(movie)
   }
 
   render() {
+    const {length: count} = this.state.movies;
+    //  const moviesLength = this.state.movies.length;
+      if(count === 0 ) 
+      return <p>There are No movies in the database</p>
     return (
+   <React.Fragment>
+       <p>showing {count} in the database</p>
       <table className="table">
+          
         <thead>
           <tr>
             <th>Title</th>
@@ -36,6 +44,7 @@ class Movies extends Component {
           ))}
         </tbody>
       </table>
+      </React.Fragment>
     );
   }
 }
