@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
 const Like = props => {
-    console.log('like props', props)
+    // console.log('like props', props)
     let classes = "fa fa-heart";
     if(!props.liked) classes += "-o"
 

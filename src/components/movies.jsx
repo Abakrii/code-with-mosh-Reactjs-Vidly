@@ -19,10 +19,17 @@ class Movies extends Component {
   handleClickinHeart = movie => {
    
     const movies = [...this.state.movies];
+
     const index = movies.indexOf(movie);
+  
+
     movies[index] = {...movies[index]};
+ 
     movies[index].liked = !movies[index].liked;
+    
     this.setState({movies});
+    
+    console.log('4' , movies)
 
 
   };
